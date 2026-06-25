@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Outfit Store — The Fashion Outlet</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement">Free shipping on orders over $75 &nbsp;|&nbsp; New arrivals every Friday</div>
+
+  <!-- Header -->
+  <header>
+    <nav class="header-left">
+      <a href="#">New In</a>
+      <a href="#">Collections</a>
+      <a href="#">Sale</a>
+    </nav>
+    <div class="logo">
+      <h1>OUTFIT STORE</h1>
+      <p>The Fashion Outlet</p>
+    </div>
+    <div class="header-right">
+      <a href="#"><i class="fa fa-search"></i></a>
+      <a href="#"><i class="fa fa-user"></i></a>
+      <a href="#" id="cartBtn" style="position:relative">
+        <i class="fa fa-shopping-bag"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <div class="search-wrap">
+      <i class="fa fa-search"></i>
+      <input type="search" placeholder="Search for dresses, jackets, accessories..."/>
+    </div>
+  </div>
+
+  <!-- Category Nav -->
+  <nav class="cat-nav">
+    <a href="#">All</a>
+    <a href="#">Dresses</a>
+    <a href="#">Jackets</a>
+    <a href="#">Sweaters</a>
+    <a href="#">Accessories</a>
+    <a href="#">Shoes</a>
+    <a href="#">Bags</a>
+    <a href="#">Sale</a>
+  </nav>
+
+  <!-- Hero Slideshow -->
+  <div class="hero">
+    <div class="slide active">
+      <img src="images/dress.jpg" alt="New Collection"/>
+      <div class="slide-overlay">
+        <div class="slide-text">
+          <p class="eyebrow">New Arrival</p>
+          <h2>The Garden Party Edit</h2>
+          <p>Floral silhouettes designed for the moments that matter.</p>
+          <a href="#">Shop the Look</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="images/img1.jpg" alt="Accessories"/>
+      <div class="slide-overlay">
+        <div class="slide-text">
+          <p class="eyebrow">Signature Pieces</p>
+          <h2>Effortless Elegance</h2>
+          <p>Timeless pieces for everyday refinement.</p>
+          <a href="#">Explore Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="images/img5.jpg" alt="Modern Style"/>
+      <div class="slide-overlay">
+        <div class="slide-text">
+          <p class="eyebrow">Curated For You</p>
+          <h2>Modern Classics</h2>
+          <p>Where contemporary style meets lasting quality.</p>
+          <a href="#">View Collection</a>
+        </div>
+      </div>
+    </div>
+    <button class="prev" onclick="moveSlide(-1)"><i class="fa fa-chevron-left"></i></button>
+    <button class="next" onclick="moveSlide(1)"><i class="fa fa-chevron-right"></i></button>
+    <div class="hero-controls">
+      <button class="dot active" onclick="goToSlide(0)"></button>
+      <button class="dot" onclick="goToSlide(1)"></button>
+      <button class="dot" onclick="goToSlide(2)"></button>
+    </div>
+  </div>
+
+  <!-- Promo Strip -->
+  <div class="promo-strip">
+    <div class="promo-item"><i class="fa fa-truck"></i><span>Free Shipping Over $75</span></div>
+    <div class="promo-item"><i class="fa fa-undo"></i><span>Free 30-Day Returns</span></div>
+    <div class="promo-item"><i class="fa fa-lock"></i><span>Secure Checkout</span></div>
+    <div class="promo-item"><i class="fa fa-headset"></i><span>24/7 Support</span></div>
+  </div>
+
+  <!-- Featured Products -->
+  <div class="section-title">
+    <p class="eyebrow">Handpicked for you</p>
+    <h2>Featured Pieces</h2>
+  </div>
+  <section class="products">
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/img4.jpg" alt="Wedding Dress"/>
+          <span class="product-badge">New</span>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)"><i class="fa fa-heart"></i></button>
+          <button class="quick-add" onclick="addToCart('Ivory Bridal Gown', 289, this)">Add to Cart</button>
+        </div>
+        <div class="product-info">
+          <p class="category">Weddings</p>
+          <h3>Ivory Bridal Gown</h3>
+          <div class="stars">★★★★★</div>
+          <p class="price">$289.00</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/img2.jpg" alt="Gold Necklace"/>
+          <span class="product-badge" style="background:#c4a882">Sale</span>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)"><i class="fa fa-heart"></i></button>
+          <button class="quick-add" onclick="addToCart('Shell Pendant Necklace', 95, this)">Add to Cart</button>
+        </div>
+        <div class="product-info">
+          <p class="category">Accessories</p>
+          <h3>Shell Pendant Necklace</h3>
+          <div class="stars">★★★★☆</div>
+          <p class="price"><span class="old">$135.00</span><span class="sale">$95.00</span></p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/img1.jpg" alt="White Lace Dress"/>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)"><i class="fa fa-heart"></i></button>
+          <button class="quick-add" onclick="addToCart('White Lace Sundress', 175, this)">Add to Cart</button>
+        </div>
+        <div class="product-info">
+          <p class="category">Dresses</p>
+          <h3>White Lace Sundress</h3>
+          <div class="stars">★★★★★</div>
+          <p class="price">$175.00</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/dress.jpg" alt="Floral Dress"/>
+          <span class="product-badge">Bestseller</span>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)"><i class="fa fa-heart"></i></button>
+          <button class="quick-add" onclick="addToCart('Chartreuse Floral Dress', 225, this)">Add to Cart</button>
+        </div>
+        <div class="product-info">
+          <p class="category">Dresses</p>
+          <h3>Chartreuse Floral Dress</h3>
+          <div class="stars">★★★★★</div>
+          <p class="price">$225.00</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Collections -->
+  <div class="section-title" style="padding-top:20px">
+    <p class="eyebrow">Explore</p>
+    <h2>Shop by Mood</h2>
+  </div>
+  <section class="collection">
+    <div class="collection-grid">
+      <div class="col-item">
+        <img src="images/img4.jpg" alt="Weddings"/>
+        <div class="col-item-overlay">
+          <span>For Weddings</span>
+          <a href="#">Shop Now →</a>
+        </div>
+      </div>
+      <div class="col-item">
+        <img src="images/img5.jpg" alt="Accessories"/>
+        <div class="col-item-overlay">
+          <span>Accessories</span>
+          <a href="#">Shop Now →</a>
+        </div>
+      </div>
+      <div class="col-item">
+        <img src="images/img1.jpg" alt="Latest"/>
+        <div class="col-item-overlay">
+          <span>Latest Arrivals</span>
+          <a href="#">Shop Now →</a>
+        </div>
+      </div>
+      <div class="col-item">
+        <img src="images/dress.jpg" alt="Classics"/>
+        <div class="col-item-overlay">
+          <span>Timeless Classics</span>
+          <a href="#">Shop Now →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Join the Inner Circle</h2>
+    <p>Early access to new arrivals, exclusive offers, and style inspiration.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Your email address"/>
+      <button onclick="subscribeNewsletter()">Subscribe</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>OUTFIT STORE</h3>
+        <p>Curated fashion for the discerning wardrobe. Quality pieces designed to last beyond the season.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Sustainability</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Order Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Dresses</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Jackets</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Outfit Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="overlay" id="overlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Bag (<span id="cartItemCount">0</span>)</h3>
+      <button class="close-cart" onclick="closeCart()"><i class="fa fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <i class="fa fa-shopping-bag"></i>
+        <p>Your bag is empty.</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
